@@ -11,12 +11,23 @@ app.init = async () => {
         user: 'root',
         database: 'books',
     });
-
+    console.log('        ');
     // LOGIC BELOW
-    const paula = await Author.create(conn, 'Paula', 'Paulaviciute')
+    const paula = await Author.create(conn, 'Paula', 'Paulaviciute');
     const mike = await Author.create(conn, 'Mike', 'Pukuotas');
+    const antoska = await Author.create(conn, 'Antanas', 'Nevidonas');
     console.log(paula);
     console.log(mike);
+    console.log(antoska);
+    console.log('        ');
+
+    visi = await Author.listAll(conn);
+    console.log(visi);
+    console.log('        ');
+
+    pagalID = await Author.findById(conn, 2);
+    console.log(pagalID);
+    console.log('        ');
 }
 
 app.init();
